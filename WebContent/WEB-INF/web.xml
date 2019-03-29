@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app id="WebApp_ID" version="3.0"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+
+
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+		<welcome-file>default.html</welcome-file>
+		<welcome-file>default.htm</welcome-file>
+		<welcome-file>default.jsp</welcome-file>
+	</welcome-file-list>
+
+<servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.mits.LoanApproval.Controllers.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+
+
+<servlet>
+    <servlet-name>WorkFlowController</servlet-name>
+    <servlet-class>com.mits.LoanApproval.Controllers.WorkFlowController</servlet-class>
+    
+    <multipart-config>
+    
+    <location>D:\DownloadDocs</location>
+    <max-file-size>500000</max-file-size>
+    <max-request-size>500000</max-request-size>
+    </multipart-config>
+   
+  </servlet>
+  
+  <servlet-mapping>
+    <servlet-name>WorkFlowController</servlet-name>
+    <url-pattern>/WorkFlowController</url-pattern>
+  </servlet-mapping>
+  
+  
+
+		<display-name>Log4jWebDemo1</display-name>
+	
+	<context-param>
+		<param-name>log4j-config-location</param-name>
+		<param-value>WEB-INF/log4j.properties</param-value>
+	</context-param>
+
+<!-- fileSizeThreshold=200000,maxFileSize=2000000,maxRequestSize=20000000) 
+@MultipartConfig(location="D:\\Documents_Upload",fileSizeThreshold=200000,maxFileSize=2000000,maxRequestSize=20000000) 
+ -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</web-app>
